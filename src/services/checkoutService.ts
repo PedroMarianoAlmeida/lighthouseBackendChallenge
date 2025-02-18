@@ -22,9 +22,12 @@ export const calculateShoppingCart = (
   }
 
   // 2. Aggregate input items by SKU (only valid SKUs).
+  // Instead of silently skipping invalid SKUs, throw an error.
   const counts = new Map<string, number>();
   for (const item of items) {
-    if (!productMap.has(item.sku)) continue;
+    if (!productMap.has(item.sku)) {
+      throw new Error(`SKU not valid: ${item.sku}`);
+    }
     counts.set(item.sku, (counts.get(item.sku) || 0) + item.qtd);
   }
 
@@ -38,7 +41,8 @@ export const calculateShoppingCart = (
   promotions.forEach((promo) => {
     const triggerSku = promo.skuTrigger;
     const triggerCount = counts.get(triggerSku);
-    if (!triggerCount) return; // Trigger not in cart
+    // If the promotion’s trigger SKU is not in the cart, we simply skip processing this promotion.
+    if (!triggerCount) return;
 
     if (promo.qtdTrigger === "multiple") {
       if (triggerCount >= promo.skuQtd) {
