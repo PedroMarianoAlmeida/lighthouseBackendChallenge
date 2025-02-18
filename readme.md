@@ -12,7 +12,7 @@ Checkout feature of a shopping cart node server
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/PedroMarianoAlmeida/lighthouseBackendChallenge
 ```
 
 Go to the project directory
