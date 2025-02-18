@@ -1,3 +1,158 @@
-GET http://localhost:3000/
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "120P90", "qtd": 1 }
+  ]
+}
 
 ###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "120P90", "qtd": 2 }
+  ]
+}
+
+###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "120P90", "qtd": 3 }
+  ]
+}
+
+###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "120P90", "qtd": 4 }
+  ]
+}
+
+###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "120P90", "qtd": 6 }
+  ]
+}
+
+###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "120P90", "qtd": 6 },
+    { "sku": "344222", "qtd": 1 }
+  ]
+}
+
+###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "43N23P", "qtd": 1 }
+  ]
+}
+
+###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "43N23P", "qtd": 1 },
+    { "sku": "344222", "qtd": 1 }
+  ]
+}
+
+###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "43N23P", "qtd": 1 },
+    { "sku": "344222", "qtd": 2 }
+  ]
+}
+
+###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "A304SD", "qtd": 4 }
+  ]
+}
+
+###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "A304SD", "qtd": 20 }
+  ]
+}
+
+###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "120P90", "qtd": 1 },
+    { "sku": "344222", "qtd": 2 }
+  ]
+}
+
+###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "120P90", "qtd": 1 },
+    { "sku": "43N23P", "qtd": 2 },
+    { "sku": "344222", "qtd": 3 }
+  ]
+}
+
+###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "43N23P", "qtd": 2 },
+    { "sku": "A304SD", "qtd": 10 }
+  ]
+}
+
+###
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "120P90", "qtd": 3 },
+    { "sku": "43N23P", "qtd": 2 },
+    { "sku": "344222", "qtd": 1 },
+    { "sku": "A304SD", "qtd": 5 }
+  ]
+}

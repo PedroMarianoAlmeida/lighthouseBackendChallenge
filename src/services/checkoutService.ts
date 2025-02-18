@@ -1,5 +1,5 @@
-import { products, type IProduct } from "models/products";
-import { promotions } from "models/promotions";
+import { products, type IProduct } from "./../models/products";
+import { promotions } from "./../models/promotions";
 
 export interface ShoppingCartItem {
   sku: string;
