@@ -156,3 +156,34 @@ Content-Type: application/json
     { "sku": "A304SD", "qtd": 5 }
   ]
 }
+
+###
+// Invalid payload: items is not an array
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": "this should be an array"
+}
+
+###
+// Invalid item: missing sku (or empty sku)
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "", "qtd": 1 }
+  ]
+}
+
+###
+// Invalid item: qtd is not a positive number (e.g., zero or negative)
+POST http://localhost:3000/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "120P90", "qtd": 0 }
+  ]
+}
