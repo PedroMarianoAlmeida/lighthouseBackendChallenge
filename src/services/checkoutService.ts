@@ -140,3 +140,23 @@ export const calculateShoppingCart = (
 
   return output;
 };
+
+export function sanitizeItems(input: any): ShoppingCartItem[] {
+  if (!Array.isArray(input)) {
+    throw new Error("Invalid payload: items must be an array.");
+  }
+
+  const sanitized: ShoppingCartItem[] = [];
+
+  for (const item of input) {
+    if (typeof item.sku !== "string" || item.sku.trim() === "") {
+      throw new Error("Each item must have a non-empty sku (string).");
+    }
+    if (typeof item.qtd !== "number" || item.qtd <= 0) {
+      throw new Error("Each item must have a qtd (number) greater than 0.");
+    }
+    sanitized.push({ sku: item.sku.trim(), qtd: item.qtd });
+  }
+
+  return sanitized;
+}
